@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: game_lounge
+    
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/your_database?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: your_username
+    password: your_password
+    
+  jpa:
+    hibernate:
+      ddl-auto: create  # 개발 중: create, 운영: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 100
+        
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.orm.jdbc.bind: trace
+    com.gamesite.forge: debug
