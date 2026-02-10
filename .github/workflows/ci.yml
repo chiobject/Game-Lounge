@@ -52,3 +52,4 @@ jobs:
         SPRING_DATASOURCE_PASSWORD: ${{ secrets.MYSQL_USER_PASSWORD }}
         SPRING_DATA_REDIS_HOST: localhost
         SPRING_DATA_REDIS_PORT: 6379
+        JWT_SECRET: ${{ secrets.JWT_SECRET }}

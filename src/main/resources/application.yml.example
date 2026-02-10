@@ -2,6 +2,7 @@ spring:
   application:
     name: game_lounge
     
+  # your 설정 필요
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/your_database?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
@@ -16,7 +17,12 @@ spring:
       hibernate:
         format_sql: true
         default_batch_fetch_size: 100
-        
+
+  # Jwt token 설정 필요
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: 86400000  # 1 day in milliseconds
+
   data:
     redis:
       host: localhost
